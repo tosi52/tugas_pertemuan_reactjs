@@ -1,12 +1,33 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import Navbar from './components/organisms/Navbar';
-import Footer from './components/organisms/Footer';
-
+// Import Layout dan Pages
+import RootLayout from './layouts/RootLayout';
 import Home from './pages/Home';
 import Team from './pages/Team';
 import Contact from './pages/Contact';
+
+// Definisi Declarative Routing
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <RootLayout />, // Navbar, Footer, dan struktur layout ada di sini
+    children: [
+      {
+        index: true, // Rute default ("/")
+        element: <Home />,
+      },
+      {
+        path: 'team', // Rute ("/team")
+        element: <Team />,
+      },
+      {
+        path: 'contact', // Rute ("/contact")
+        element: <Contact />,
+      },
+    ],
+  },
+]);
 
 export default function App() {
   useEffect(() => {
@@ -14,18 +35,6 @@ export default function App() {
   }, []);
 
   return (
-    <Router>
-      <div className="d-flex flex-column min-vh-100">
-        <Navbar />
-        <main className="flex-grow-1">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/team" element={<Team />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <RouterProvider router={router} />
   );
 }
