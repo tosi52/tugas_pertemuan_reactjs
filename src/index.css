@@ -1,0 +1,70 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+:root {
+  --primary-color: #0f172a;
+  --accent-color: #0284c7;
+  --gold-color: #d97706;
+  --bg-color: #f8fafc;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: #1e293b;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom Navbar & Footer Style */
+.bg-navy {
+  background-color: var(--primary-color) !important;
+}
+
+.text-gold {
+  color: #f59e0b !important;
+}
+
+/* Button Customization */
+.btn-navy {
+  background-color: #0f172a;
+  color: #ffffff;
+  border: none;
+}
+
+.btn-navy:hover {
+  background-color: #1e293b;
+  color: #ffffff;
+}
+
+.btn-accent {
+  background-color: #0284c7;
+  color: #ffffff;
+  border: none;
+}
+
+.btn-accent:hover {
+  background-color: #0369a1;
+  color: #ffffff;
+}
+
+/* Book Card Styling */
+.book-card-modern {
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.book-card-modern:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
+}
+
+.book-badge {
+  background-color: #f1f5f9;
+  color: #475569;
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
