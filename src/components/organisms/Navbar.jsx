@@ -16,11 +16,15 @@ export default function Navbar() {
           <span>BookStore<span className="text-gold">Hub</span></span>
         </Link>
 
+        <Link className={`nav-link ${isActive('/book')}`} to="/book">
+          Halaman Book
+        </Link>
+
         {/* Menu Navigasi di Tengah (mx-auto) */}
         <div className="navbar-nav mx-auto flex-row gap-4 align-items-center">
-          <Link className={`nav-link ${isActive('/')}`} to="/">Katalog Buku</Link>
-          <Link className={`nav-link ${isActive('/team')}`} to="/team">Tim Kami</Link>
-          <Link className={`nav-link ${isActive('/contact')}`} to="/contact">Hubungi Kami</Link>
+          <Link className={`nav-link ${isActive('/')}`} to="/">Catalog Book</Link>
+          <Link className={`nav-link ${isActive('/team')}`} to="/team">Our Team</Link>
+          <Link className={`nav-link ${isActive('/contact')}`} to="/contact">Contact Us</Link>
         </div>
       </div>
     </nav>
